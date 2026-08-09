@@ -29,6 +29,9 @@ class Car
     #[ORM\Column(length: 255)]
     private ?string $Gearbox = null;
 
+    #[ORM\Column]
+    private ?int $Places = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Car
     public function setGearbox(string $Gearbox): static
     {
         $this->Gearbox = $Gearbox;
+
+        return $this;
+    }
+
+    public function getPlaces(): ?int
+    {
+        return $this->Places;
+    }
+
+    public function setPlaces(int $Places): static
+    {
+        $this->Places = $Places;
 
         return $this;
     }
