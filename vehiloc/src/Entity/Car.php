@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 
 use App\Repository\CarRepository;
@@ -17,17 +16,17 @@ class Car
     #[ORM\Column(length: 255)]
     private ?string $Name = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $Description = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
-    private ?string $MonthPrice = null;
+    #[ORM\Column]
+    private ?float $MonthPrice = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
-    private ?string $DayPrice = null;
+    #[ORM\Column]
+    private ?float $DayPrice = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Gearbox = null;
+    #[ORM\Column]
+    private ?bool $Gearbox = null;
 
     #[ORM\Column]
     private ?int $Places = null;
@@ -61,36 +60,36 @@ class Car
         return $this;
     }
 
-    public function getMonthPrice(): ?string
+    public function getMonthPrice(): ?float
     {
         return $this->MonthPrice;
     }
 
-    public function setMonthPrice(?string $MonthPrice): static
+    public function setMonthPrice(?float $MonthPrice): static
     {
         $this->MonthPrice = $MonthPrice;
 
         return $this;
     }
 
-    public function getDayPrice(): ?string
+    public function getDayPrice(): ?float
     {
         return $this->DayPrice;
     }
 
-    public function setDayPrice(?string $DayPrice): static
+    public function setDayPrice(?float $DayPrice): static
     {
         $this->DayPrice = $DayPrice;
 
         return $this;
     }
 
-    public function getGearbox(): ?string
+    public function getGearbox(): ?bool
     {
         return $this->Gearbox;
     }
 
-    public function setGearbox(string $Gearbox): static
+    public function setGearbox(bool $Gearbox): static
     {
         $this->Gearbox = $Gearbox;
 
