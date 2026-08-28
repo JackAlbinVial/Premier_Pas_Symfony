@@ -14,21 +14,28 @@ class Car
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $Name = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private ?string $Description = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?float $MonthPrice = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?float $DayPrice = null;
 
     #[ORM\Column]
+    #[Assert\NotNull]
     private ?bool $Gearbox = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Range(min: 1, max: 9)]
     private ?int $Places = null;
 
     public function getId(): ?int
