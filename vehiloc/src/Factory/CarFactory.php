@@ -34,10 +34,10 @@ final class CarFactory extends PersistentProxyObjectFactory
     protected function defaults(): array | callable
     {
         return [
-            'DayPrice'    => self::faker()->randomFloat(),
+            'DayPrice'    => self::faker()->randomFloat(2, 20, 500),
             'Description' => self::faker()->text(),
             'Gearbox'     => self::faker()->boolean(),
-            'MonthPrice'  => self::faker()->randomFloat(),
+            'MonthPrice'  => self::faker()->randomFloat(2, 300, 5000),
             'Name'        => self::faker()->text(255),
             'Places'      => self::faker()->randomNumber(),
         ];

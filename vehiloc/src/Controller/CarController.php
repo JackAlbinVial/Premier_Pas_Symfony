@@ -36,7 +36,7 @@ final class CarController extends AbstractController
         ]);
     }
 
-    #[Route('/car/{id}/delete', name: 'app_remove')]
+    #[Route('/car/{id}/delete', name: 'app_remove', methods: ['POST'])]
     public function remove(EntityManagerInterface $carManager, int $id): Response
     {
         $car = $carManager->find(Car::class, $id);

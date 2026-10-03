@@ -27,7 +27,11 @@
                     <p>ou similaire | Saint-Étienne</p>
                 </a>
                 <div>
-                    <a href="{{ path('app_remove', { id: car.id }) }}"><img src="{{ asset('icons/trash.png') }}" alt="Supprimer" /></a>
+                    <form method="post" action="{{ path('app_remove', { id: car.id }) }}">
+                        <button type="submit" class="delete-button" aria-label="Supprimer {{ car.Name }}">
+                            <img src="{{ asset('icons/trash.png') }}" alt="" />
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="mini-car-icons">
